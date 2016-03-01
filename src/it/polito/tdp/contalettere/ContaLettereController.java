@@ -25,13 +25,30 @@ public class ContaLettereController {
     @FXML
     private TextArea txtRisposta;
 
+    /**
+     * Metodo "event handler" associato alla gestione dell'evento ACTION
+     * (cioè la pressione del bottone) sul bottone {@code btnConta}.\
+     * Questo metodo viene chiamato automaticamente, ogni volta che il
+     * bottone "Conta" viene premuto.
+     * 
+     * In questo esercizio, il metodo {@code doConta} raccoglie il testo che
+     * l'utente ha inserito nella {@link TextField} di nome {@code txtParola},
+     * ne calcola la lunghezza e stampa il risultato nella {@link TextArea}
+     * di nome {@code txtRisposta}. 
+     * 
+     * @param event
+     */
     @FXML
     void doConta(ActionEvent event) {
     	
-    	// System.out.println("CLICK!") ;
+    	// Estrae il valore corrente dell'attributo Text del TextField
+    	// (cioè il testo scritto dall'utente)
     	String parola = txtParola.getText() ;
+    	
     	int lun = parola.length() ;
     	String messaggio = "La parola " + parola + " ha " + lun + " lettere" ;
+    	
+    	// Imposta il contenuto della TextArea (rimpiazzando quello precedente)
     	txtRisposta.setText(messaggio);
     }
 
